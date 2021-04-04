@@ -1,9 +1,4 @@
 from discord.ext import commands
-import mysql.connector
-
-mydb = mysql.connector.connect(host="localhost", user="root", password="********", database="mydb")
-
-mycursor = mydb.cursor()
 
 TOKEN = "*******************************************"
 client = commands.Bot(command_prefix="")
