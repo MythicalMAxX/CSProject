@@ -5,15 +5,15 @@ from discord.ext import commands
 import mysql.connector
 
 
-mydb = mysql.connector.connect(host="localhost", user="root", password="14147714", database="vinamradb")
+mydb = mysql.connector.connect(host="localhost", user="root", password="********", database="********")
 
 mycursor = mydb.cursor()
 
 
 def mailer(data, reciever, subject):
     message = data
-    sender = "pokemongo1003player@gmail.com"
-    password = "14147714"
+    sender = "*****************.com"
+    password = "*******"
     body = 'Subject: {}\n\n{}'.format(subject, message)
     with smtplib.SMTP("smtp.gmail.com", 587) as smtpserver:
         smtpserver.ehlo()
@@ -24,7 +24,7 @@ def mailer(data, reciever, subject):
 
 
 
-TOKEN = "ODE2Njg5MTQ1NjczNTQ3Nzg2.YD-nCQ.vaACh6IGeVwulyjJQ06ic-gdTLc"
+TOKEN = "*********************************************"
 client = commands.Bot(command_prefix="!")
 
 
