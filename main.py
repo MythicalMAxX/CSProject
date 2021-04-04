@@ -59,7 +59,6 @@ async def make_new(ctx):
     await wachannel.send("Welcome")
 
 @client.command(aliases=['Send_mail', 'SEND_MAIL'])
-@commands.has_permissions(kick_members=True)
 async def send_mail(ctx, data, reciever, subject):
     files = open("editor.txt", "w")
     files.write(data)
@@ -116,35 +115,30 @@ async def Marks1(ctx,subject:str,chapter:str,topic:str, *, data):
 
 
 @client.command(aliases=['Show_mark5', 'Show_Mark5', 'SHOW_MARK5'])
-@commands.has_permissions(kick_members=True)
 async def show_mark5(ctx):
     mycursor.execute("SELECT questions FROM Question5Marks ORDER BY RAND() LIMIT 1;")
     myresult = mycursor.fetchone()
     await ctx.send(myresult)
 
 @client.command(aliases=['Show_mark4', 'Show_Mark4', 'SHOW_MARK4'])
-@commands.has_permissions(kick_members=True)
 async def show_mark4(ctx):
     mycursor.execute("SELECT questions FROM Question4Marks ORDER BY RAND() LIMIT 1;")
     myresult = mycursor.fetchone()
     await ctx.send(myresult)
 
 @client.command(aliases=['Show_mark3', 'Show_Mark3', 'SHOW_MARK3'])
-@commands.has_permissions(kick_members=True)
 async def show_mark3(ctx):
     mycursor.execute("SELECT questions FROM Question3Marks ORDER BY RAND() LIMIT 1;")
     myresult = mycursor.fetchone()
     await ctx.send(myresult)
 
 @client.command(aliases=['Show_mark2', 'Show_Mark2', 'SHOW_MARK2'])
-@commands.has_permissions(kick_members=True)
 async def show_mark2(ctx):
     mycursor.execute("SELECT questions FROM Question2Marks ORDER BY RAND() LIMIT 1;")
     myresult = mycursor.fetchone()
     await ctx.send(myresult)
 
 @client.command(aliases=['Show_mark1', 'Show_Mark1', 'SHOW_MARK1'])
-@commands.has_permissions(kick_members=True)
 async def show_mark1(ctx):
     mycursor.execute("SELECT questions FROM Question1Marks ORDER BY RAND() LIMIT 1;")
     myresult = mycursor.fetchone()
@@ -152,7 +146,6 @@ async def show_mark1(ctx):
 
 
 @client.command(aliases=['Showall_mark5', 'Showall_Mark5', 'SHOWALL_MARK5'])
-@commands.has_permissions(kick_members=True)
 async def showall_mark5(ctx):
     mycursor.execute("SELECT questions FROM Question5Marks;")
     myresult = mycursor.fetchall()
@@ -161,35 +154,30 @@ async def showall_mark5(ctx):
 
 
 @client.command(aliases=['Showall_mark4', 'Showall_Mark4', 'SHOWALL_MARK4'])
-@commands.has_permissions(kick_members=True)
 async def showall_mark4(ctx):
     mycursor.execute("SELECT questions FROM Question4Marks;")
     myresult = mycursor.fetchall()
     await ctx.send(myresult)
 
 @client.command(aliases=['Showall_mark3', 'Showall_Mark3', 'SHOWALL_MARK3'])
-@commands.has_permissions(kick_members=True)
 async def showall_mark3(ctx):
     mycursor.execute("SELECT questions FROM Question3Marks;")
     myresult = mycursor.fetchall()
     await ctx.send(myresult)
 
 @client.command(aliases=['Showall_mark2', 'Showall_Mark2', 'SHOWALL_MARK2'])
-@commands.has_permissions(kick_members=True)
 async def showall_mark2(ctx):
     mycursor.execute("SELECT questions FROM Question2Marks;")
     myresult = mycursor.fetchall()
     await ctx.send(myresult)
 
 @client.command(aliases=['Showall_mark1', 'Showall_Mark1', 'SHOWALL_MARK1'])
-@commands.has_permissions(kick_members=True)
 async def showall_mark1(ctx):
     mycursor.execute("SELECT questions FROM Question1Marks;")
     myresult = mycursor.fetchall()
     await ctx.send(myresult)
 
 @client.command(aliases=['Filtersubject'])
-@commands.has_permissions(kick_members=True)
 async def filtersubject(ctx,*,data):
     sql = "SELECT questions FROM Question5Marks WHERE Subject = (%s);"
     val = [data]
@@ -223,7 +211,6 @@ async def filtersubject(ctx,*,data):
         await ctx.send(myresult)
 
 @client.command(aliases=['Filtertopic'])
-@commands.has_permissions(kick_members=True)
 async def filtertopic(ctx,*,data):
     sql = "SELECT questions FROM Question5Marks WHERE Topic = (%s);"
     val = [data]
@@ -257,7 +244,6 @@ async def filtertopic(ctx,*,data):
         await ctx.send(myresult)
 
 @client.command(aliases=['FilterChapter'])
-@commands.has_permissions(kick_members=True)
 async def filterChapter(ctx,*,data):
     sql = "SELECT questions FROM Question5Marks WHERE Chapter = (%s);"
     val = [data]
